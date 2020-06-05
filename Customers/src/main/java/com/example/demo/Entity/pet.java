@@ -35,7 +35,7 @@ public class pet {
     @JsonBackReference(value="cus-pet")
     private customer customer;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     @JsonBackReference(value="cus-tp")
     private typePet typePet;
 }

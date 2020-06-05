@@ -24,7 +24,31 @@ public class typePet {
     @NotBlank
     private String Type;
 
-    @OneToMany(mappedBy = "typePet", fetch = FetchType.LAZY, cascade=CascadeType.PERSIST)
+    @OneToMany(mappedBy = "typePet", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     @JsonBackReference(value="tp-pet")
     private List<pet> pets;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
+    }
+
+    public List<pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<pet> pets) {
+        this.pets = pets;
+    }
 }
